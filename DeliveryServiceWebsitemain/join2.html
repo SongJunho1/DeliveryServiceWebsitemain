@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/join2.css">
+    <script src="js/jquery-3.6.0.min.js"></script> <!--라이브러리-->
+    <script>
+        window.onload=()=>{
+    
+            var count=0;
+            setInterval(verticalSlide,1200);
+    
+            function verticalSlide(){
+                if(count>6){
+                    $('.notice ul').stop().animate({
+                        top:0
+                    });
+                    count=0;            
+                }else{
+                    $('.notice ul').stop().animate({
+                        top:-(count*41)
+                    });
+                    count++;
+                }
+            }
+    
+            //상위메뉴 호버 - 하위메뉴 슬라이드
+            $('.mainMenu>li').hover(function(index){
+                $(this).children('ul').stop().slideDown(400);
+            },function(){
+                $(this).children('ul').stop().slideUp(400);
+            });
+    
+            //메뉴 li 호버 시 a 글자 흰색으로
+            $('.mainMenu ul li').hover(function(){
+                $(this).children().css('color','whitesmoke');
+            },function(){
+                $(this).children().css('color','rgb(40, 40, 40)');
+            });
+
+        }
+
+        //이메일 직접입력 선택 시 인풋 show
+        const emailCheck=()=>{
+            let select=document.querySelector('#site');
+            let hiddenInput=document.querySelector('#siteIf');
+            if(select[3].selected){
+                hiddenInput.style.display='inline-block';
+            }else{
+                hiddenInput.style.display='none';
+            }      
+        }
+    </script>    
+</head>
+<body>
+
+    <div id="wrapper">
+
+        <!-- 헤더 영역 시작 -->
+        <header>
+            
+            <ul class="linkMenu"> <!-- 링크 메뉴 -->
+                <li><a href="join1.html">회원가입</a></li>
+                <li><a href="#">로그인</a></li>
+                <li><a href="#">홈</a></li>
+            </ul>
+            
+            <div class="menus">
+                <div class="logo"> <!-- 로고 -->
+                    <a href="index.html"><span>AMOO</span>21</a>
+                </div>
+                
+                <ul class="mainMenu">  <!-- 메인 메뉴 -->
+                    <li>
+                        <a href="#">배송 대행</a>
+                        <ul>
+                            <li><a href="#">이용 방법</a></li>
+                            <li><a href="#">신청서 작성</a></li>
+                            <li><a href="#">신청 내역</a></li>
+                            <li><a href="#">트래킹 추가등록</a></li>
+                            <li><a href="#">출고 요청</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">유럽 바잉</a>
+                        <ul>
+                            <li><a href="#">이용 방법</a></li>
+                            <li><a href="#">신청 내역</a></li>
+                            <li><a href="#">바잉 문의</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">정산 관리</a>
+                        <ul>
+                            <li><a href="#">배송 예치금</a></li>
+                            <li><a href="#">적립 신청</a></li>
+                            <li><a href="#">신청 내역</a></li>
+                            <li><a href="#">사용 내역</a></li>
+                            <li><a href="#">환급 신청</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">이용 안내</a>
+                        <ul>
+                            <li><a href="#">공지사항</a></li>
+                            <li><a href="#">회원 등급</a></li>
+                            <li><a href="#">배송요율</a></li>
+                            <li><a href="#">Tax Refund</a></li>
+                            <li><a href="#">검수 안내</a></li>
+                            <li><a href="#">FAQ</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <div class="notice"> <!-- 공지사항 -->
+                    <a href="#"><h2>공지사항</h2></a>
+                    <ul>
+                        <li>
+                            <a href="#">고객센터 휴무 안내 (7/20)</a>
+                        </li>                            
+                        <li>
+                            <a href="#"><img src="images/france2.png" width=20 alt="프랑스">배송비 인상 안내</a>
+                        </li>                            
+                        <li>
+                            <a href="#"><img src="images/spain2.png" alt="스페인">배송비 인상 안내</a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="images/germany2.png" alt="독일">택스 리펀(2021.08.12까지 완료)</a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="images/germany2.png" alt="독일">택스리펀 빌링주소 변경</a>
+                        </li>
+                        <li>
+                            <a href="#">7월 각 센터별 휴무 안내</a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="images/china2.png" alt="중국">폭우로 인한 화물 훼손 안내</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="menuBack"></div>
+
+        </header>
+        <!-- 헤더 영역 끝 -->
+
+
+        <!-- 회원가입 영역 시작 -->
+        <div class="joinArea">
+
+            <div class="steps"> <!-- 제목 및 단계별 버튼 -->
+                <h2>회원가입</h2>
+                <div>약관 동의</div>
+                <div>정보 입력</div>
+                <div>가입 완료</div>
+            </div>
+
+            <!-- 2단계 영역 -->
+            <div class="step2">
+
+                <form action="join3.html" id="joinForm" name="joinForm">
+
+                    <fieldset>
+                        <legend>회원가입 폼</legend>
+                        <p class="requireP"><strong class="require">*</strong>는 필수 항목입니다.</p>
+                        <p>
+                            <label for="id">
+                                <strong class="require">*</strong>아이디
+                            </label>
+                            <input type="text" name="id" id="id" placeholder="영문자, 숫자, _만 입력 가능" required>
+                            
+                            
+                            <a href="pop_idCheck.html" class="idCheck">ID 중복 확인</a>
+                         
+                            
+                        </p>
+                        <p>
+                            <label for="pass">
+                                <strong class="require">*</strong>비밀번호
+                            </label>
+                            <input type="text" name="pass" id="pass" required>
+                        </p>
+                        <p>
+                            <label for="pass2">
+                                <strong class="require">*</strong>비밀번호 확인
+                            </label>
+                            <input type="text" name="pass2" id="pass2" required>
+                        </p>               
+                        <p>
+                            <label for="passQ">
+                                비밀번호 분실 시 질문
+                            </label>
+                            <select name="passQ" id="passQ">
+                                <option value="passQ1">좋아하는 영화는?</option>
+                                <option value="passQ2">평소 취미는?</option>
+                                <option value="passQ3">좋아하는 색깔은?</option>
+                                <option value="passQ4">어릴적 좋아했던 선생님 성함은?</option>
+                                <option value="passQ5">가장 기억에 남는 여행지는?</option>
+                                <option value="passQ6">보물 1호는?</option>
+                            </select>
+                        </p>
+                        <p>
+                            <label for="passA">
+                                <strong class="require">*</strong>비밀번호 분실 시 답변
+                            </label>
+                            <input type="text" name="passA" id="passA" required>
+                        </p>
+                        <p>
+                            <label for="name">
+                                <strong class="require">*</strong>이름
+                            </label>
+                            <input type="text" name="name" id="name" placeholder="공백 없이 한글만" required>
+                        </p>
+                        <p>
+                            <label for="engName">
+                                <strong class="require">*</strong>영문 이름
+                            </label>
+                            <input type="text" name="engName" id="engName" required>
+                        </p>    
+                        <p>
+                            <label for="email">
+                                <strong class="require">*</strong>이메일
+                            </label>
+                            <input type="text" name="email" id="email" required>
+                            <span>@</span>
+                            <select name="site" id="site" onclick="emailCheck()">
+                                <option selected='' value="site1">naver.com</option>
+                                <option value="site2">hanmail.net</option>
+                                <option value="site3">gmail.com</option>
+                                <option value="site4">직접 입력</option>
+                            </select>
+                            <input type="text" name="siteIf" id="siteIf">
+                        </p> 
+                        <p>
+                            <label>
+                                <strong class="require">*</strong>전화번호
+                            </label>
+                            <input type="tel" name="tel1" id="tel1" required size="3" maxlength="3">-
+                            <input type="tel" name="tel2" id="tel2" required size="4" maxlength="4">-
+                            <input type="tel" name="tel3" id="tel3" required size="3" maxlength="3">
+                        </p>   
+                        <p>
+                            <label for="birth">
+                                생년월일
+                            </label>
+                            <input type="date" name="birth" id="birth">
+                        </p>
+                        <p>
+                            <label>
+                                성별
+                            </label>
+                            <input type="radio" name="sex" id="fe">
+                            <label class="labels" for="fe">여</label>
+                            <input type="radio" name="sex" id="ma">
+                            <label class="labels" for="ma">남</label>
+                        </p>
+                        <p>
+                            <label for="deliver">
+                                <strong class="require">*</strong>주소
+                            </label>
+                            <input type="tel" required id="post" name="post" maxlength="5" size="6">
+                            
+                            
+                            <a href="find_zipcode.html" class="findZipcode">우편번호 검색</a>
+                            
+                            <br>
+                            <input type="text" required name="deliver" id="deliver" maxlength="100" size="60">
+                        </p>
+                        <p>
+                            <label>
+                                메일링 서비스
+                            </label>
+                            <span>정보 메일을 받겠습니다.</span>
+                            <input type="radio" name="mailing" id="mailing1">
+                            <label class="labels" for="mailing1">네</label>
+                            <input type="radio" name="mailing" id="mailing2">
+                            <label class="labels" for="mailing2">아니오</label>
+                        </p>
+                        <p>
+                            <label>
+                                SMS 수신 여부
+                            </label>
+                            <span>핸드폰 문자메세지를 받겠습니다.</span>
+                            <input type="radio" name="sms" id="sms1">
+                            <label class="labels" for="sms1">네</label>
+                            <input type="radio" name="sms" id="sms2">
+                            <label class="labels" for="sms2">아니오</label>
+                        </p>
+
+                        <div class="buttons">
+                            <button type="submit">회원가입</button>
+                            <button type="button" onclick="location.href='index.html'">취소</button>
+                        </div>
+                    </fieldset>
+
+
+                </form>
+
+            </div> <!-- /2단계 영역 -->
+
+        </div>
+        <!-- 회원가입 영역 끝 -->
+
+
+        <!-- 푸터 영역 시작 -->
+        <footer>
+        
+            <div class="footerL"> <!-- 왼쪽 푸터 -->          
+                <section id="aboutCS"> <!-- 고객 센터 -->
+                    <h3>CUSTOMER CENTER</h3>
+                    <p>전화번호 : 1544-6318</p>
+                    <p>상담시간 : 평일 10:00-17:00</p>
+                    <p>점심시간 : 13:00-14:00</p>
+                    <p>휴무 : 토.일.공휴일</p>
+                </section>
+
+                <section id="aboutBank"> <!-- 은행 계좌 -->
+                    <h3>BANK ACCOUNT</h3>
+                    <p>김세원</p>
+                    <p>SC은행</p>
+                    <p>639-20-039375</p> <br><br>
+                </section>
+            </div>
+
+            <div class="footerR"> <!-- 오른쪽 푸터 -->
+                <address> <!-- 주소 -->
+                    <span>주소 : 경기 안양시 동안구 관양동 1586-6&nbsp;&nbsp;</span>
+                    <span>TEL : 1544-6318</span><br>
+                    <span>통신판매업 신고 : 2007-경기안양-474&nbsp;&nbsp;</span>
+                    <span>사업자등록번호 : 138-06-59415</span><br>
+                    <span>개인정보관리 책임 : 김세원&nbsp;&nbsp;</span>
+                    <span>상호 : AMOO(아무)&nbsp;&nbsp;</span>
+                    <span>대표 : 김세원</span><br>
+                </address>
+
+                <section id="law"> <!-- 약관 -->
+                    <h2 style="display: none;">약관</h2>
+                    <p>AMOO21은 관세법 등 관련 규정을 준수하고, 불법 물품을 취급하지 아니하며,<br>
+                        분할배송에 의한 가격허위신고(15만원 이하로 임의조정) 등 <br> 구매자의
+                        불법사항 요청에는 일체 협조하지 않습니다.
+                    </p>
+                </section>
+            </div>
+
+        </footer>
+        <!-- 푸터 영역 끝 -->
+    </div>
+    <!--wrapper 영역 끝-->    
+</body>
+</html>
+
+
+
+

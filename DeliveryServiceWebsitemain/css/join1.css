@@ -1,0 +1,87 @@
+@charset "utf-8";
+/* 회원가입 레이아웃 */
+.joinArea{
+    margin: 30px auto 0;
+    text-align: center;
+}
+
+
+/* 제목 및 단계 */
+.steps{
+    margin: 0 auto;
+}
+.steps h2{
+    margin-left: -650px;
+    font-size: 1.1em;
+    background-color: rgba(55, 212, 214,0.7);
+    letter-spacing: 3px;
+    height: 30px;
+    line-height: 30px;
+    color: whitesmoke;
+    font-weight: 500;
+}
+.steps div{ /* 단계별 버튼 */
+    width: 150px;
+    height: 45px;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    display: inline-block;
+    background: linear-gradient(to bottom, #fff,rgb(245, 245, 245));
+    border: 1px solid rgb(161, 161, 161);
+    border-radius: 25px;
+    line-height: 45px;
+}
+.steps div:nth-child(2){
+    background: rgba(55, 212, 214,0.3);
+    border: 2px solid rgba(55, 212, 214,0.3);
+}
+
+
+/* 1단계 (약관 동의) */
+.step1{
+    border: 1px dashed rgb(247,247,247);
+    box-sizing: border-box;
+    padding: 60px;
+    border-radius: 4px;
+    margin: auto auto;
+    background: linear-gradient(to bottom, rgb(247, 247, 247), #fff, rgb(247, 247, 247));
+}
+.step1 div{ /* 약관 영역 */
+    display: inline-block;
+    width: 700px;
+    height: 300px;
+    overflow: scroll;
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin: 0 auto;
+    margin-top: 30px;
+    line-height: 1.5em;
+}
+.step1 input{ /* 동의 체크박스 */
+    display: none;
+}
+.step1 input+label{
+    display: block;
+    background-color: rgb(202, 237, 236);
+    border-radius: 20px;
+    cursor: pointer;
+    margin: 20px auto;
+    width: 60px;
+    padding: 6px;
+}
+.step1 input:checked+label{
+    background-color: rgb(105, 209, 212);
+    color: whitesmoke;
+}
+.step1 button{  /* 다음 단계 버튼 */
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    background-color: black;
+    color: white;
+    border-radius: 3px;
+    margin: 20px auto;
+    margin-top: 50px;
+}
+.step1 button:hover{
+    cursor: pointer;
+}

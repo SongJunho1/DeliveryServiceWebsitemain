@@ -1,0 +1,67 @@
+@charset "utf-8";
+/* 회원가입 레이아웃 */
+.joinArea{
+    margin: 30px 0;
+    text-align: center;
+}
+
+
+/* 제목 및 단계 */
+.steps{
+    margin: 0 auto;
+    text-align: center;
+}
+.steps h2{
+    margin-left: -650px;
+    font-size: 1.1em;
+    background-color: rgba(55, 212, 214,0.7);
+    letter-spacing: 3px;
+    height: 30px;
+    line-height: 30px;
+    color: whitesmoke;
+    font-weight: 500;
+}
+.steps div{ /* 단계별 버튼 */
+    width: 150px;
+    height: 45px;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    display: inline-block;
+    border: 1px solid rgb(161, 161, 161);
+    background: linear-gradient(to bottom, #fff,rgb(245, 245, 245));
+    border-radius: 25px;
+    line-height: 45px;
+}
+.steps div:nth-child(4){
+    background: rgba(55, 212, 214,0.3);
+    border: 2px solid rgba(55, 212, 214,0.3);
+}
+
+
+/* 3단계 (가입 완료 메시지) */
+.step3{
+    height: 600px;
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 4px;
+    background: linear-gradient(to bottom, rgb(247, 247, 247), #fff, rgb(247, 247, 247));
+    margin-bottom: -50px;
+}
+.step3 p{ /* 메시지 */
+    position: relative;
+    top: 250px;
+    font-size: 1.2em;
+}
+.step3 button{ /* 버튼 */
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    background-color: black;
+    color: white;
+    margin-top: 400px;
+    cursor: pointer;
+}
+.step3 button:nth-of-type(1){
+    margin-left: 10px;
+    margin-right: 50px;
+}

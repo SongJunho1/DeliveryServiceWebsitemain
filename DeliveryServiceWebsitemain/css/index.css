@@ -1,0 +1,335 @@
+@charset "utf-8";
+/* 메인 영역 */
+.main{
+    text-align: center;
+    position: relative;
+}
+.main li{
+    display: inline-block;
+}
+.main #mainImg img{ /* 메인 이미지 */
+    width: 100%;
+}
+/* 메인콘텐츠 섹션들 */
+.mainContent section{ 
+    margin: 160px auto;
+    /* border: 1px solid blue; */
+    border-top: 3px solid rgb(55, 212, 214);
+    position: relative;
+}
+.main #mainImg{
+    margin: 0;
+}
+.mainContent section:first-child{
+    border-top: none;
+    margin-top: 0;
+}
+.mainContent h2{ /* 섹션 제목 */
+    font-size: 2.5em;
+    margin: 50px auto;
+}
+.mainContent .button{ /* 더보기 버튼 */
+    height: 30px;
+    width: 70px;
+    border: 1px solid rgb(29, 29, 29);
+    border-radius: 20px;
+    padding: 2px 5px;
+    position: absolute;
+    right: 40px;
+    bottom: -40px;
+    font-size: 0.9em;
+    line-height: 28px;
+    text-align: center;
+    cursor: pointer;
+}
+.button:hover{
+    color: rgb(119, 119, 119);
+}
+.button, img{
+    z-index: 3;
+}
+/* 유럽바잉, 리뷰 섹션 (이미지슬라이드) */
+.mainContent section ul{
+    height: 400px;
+    width: 1200px;
+    overflow: hidden;
+    margin: auto;
+    display: flex;
+    position: inherit;
+}
+.mainContent section ul li{
+    flex-wrap: nowrap;
+    margin: auto 50px;
+    position: relative;
+    display: inline-block;
+    width: 300px;
+    height: 300px;
+}
+.mainContent section ul a{
+    width: 300px;
+    height: 300px;
+    display: inline-block;
+    overflow: hidden;
+}
+.mainContent section ul a img{
+    width: 300px;
+    height: 300px;
+    transition: all 0.2s linear;
+}
+.mainContent #europe ul a:hover img{
+    width: 330px;
+    height: 330px;
+    transform: scale(1.1,1.1);
+}
+.mainContent .arrowL, .mainContent .arrowR{ /* 화살표 버튼 */
+    width: 25px;
+    height: 60px;
+    position: absolute;
+    cursor: pointer;
+}
+.arrowL{ /* 왼쪽 화살표 */
+    left: 80px;
+    top: 55%;
+}
+.arrowR{ /* 오른쪽 화살표 */
+    right: 80px;
+    top: 55%;
+}
+/* 유럽바잉 섹션 */
+#europe span{ /* 상품 브랜드 */
+    font-weight: bold;
+    font-size: 1.3em;
+}
+#europe .imgText{ /* 상품 설명 */
+    background: rgba(240, 240, 240, 0.8);
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+    width: 300px;
+    height: 100px;
+    line-height: 30px;
+    font-size: 0.9em;
+    display: none;
+    color: black;
+}
+/* 이벤트 섹션 */
+.mainContent #event .eventFrame{ /* 이벤트 영역 */
+    height:fit-content;
+    width: 1300px;
+    text-align: center;
+    margin: 0 auto;
+}
+.mainContent #event img{
+    width: 600px;
+    height: 200px;
+    margin: 5px;
+}
+/* 리뷰 섹션*/
+
+#review ul li a:hover .imgText{
+    transform: rotateX(90deg);
+}
+#review .imgText{
+    transition: all 0.3s linear;
+    background: rgba(240, 240, 240, 0.9);
+    position: absolute;
+    width: 300px;
+    height: 100px;
+    left: 0;
+    bottom: 0;
+    line-height: 30px;
+    font-size: 0.9em;
+    display: inline-block;
+    color: black;
+    letter-spacing: 1px;
+}
+#review li{
+    position: relative;
+    display: inline-block;
+    transition: all 2s linear;
+}
+#review .play{
+    width: 40px;
+    margin: 0 auto;
+    cursor: pointer;
+}
+/* 국가별 고객센터 섹션 */
+.mainContent #intCS{ 
+    margin-bottom: 50px;
+    text-align: center;
+}
+.mainContent #intCS .tableFrame{ /* 표 영역 */
+    width: 800px;
+    height: 300px;
+    border: 1px solid rgb(89, 236, 255);
+    border-radius: 20px;
+    margin: 100px auto;
+    padding: 20px;
+}
+.mainContent #intCS img{ /* 국기 이미지 */
+    width: 50px;
+}
+.mainContent #intCS table{
+    width: 800px;
+    height: 300px;
+    text-align: center;
+    row-gap: 20px;
+    padding: 10px;
+    cursor: default;
+    font-size: 1em;
+    line-height: 1.5em;
+}
+.mainContent #intCS th{
+    font-size: 1.2em;
+}
+.mainContent #intCS .work{ /* 운영 여부 알림 */
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+
+/* 좌측 해외주소 영역 */
+.intAddr{
+    position: absolute;
+    width: 110px;
+    height: 30px;
+    top:180px;
+    left: 0;
+    text-align: center;
+    z-index: 10;
+}
+.intAddrTitle{
+    background-color: rgb(237, 249, 163);
+    border-radius: 0 20px 20px 0;
+    font-size: 0.8em;
+    height: 40px;
+    line-height: 40px;
+    color: #111;
+    width: 120px;
+    position: fixed;
+    cursor: pointer;
+    text-align: right;
+    padding-right: 10px;
+    font-weight: bold;
+}
+.intAddrFlag{
+    background-color: rgba(234, 234, 234, 0.5);
+    border-radius: 0 30px 30px 0;
+    z-index: 11;
+    position: fixed;
+    margin-top: 40px;
+    width: 855px;
+    height: 100px;
+    left: -855px;
+}
+.intAddrFlag img{
+    width: 80px;
+    height: 80px;
+    margin: 10px;
+    cursor: pointer;
+    position: relative;
+}
+.flagPopup{
+    border: 1px solid rgb(89, 236, 255);
+    display: none;
+    width: fit-content;
+    min-width: 200px;
+    height: fit-content;
+    padding: 30px;
+    text-align: justify;
+    position: fixed;
+    top: 325px;
+    border-radius: 20px;
+    background-color: white;
+}
+.flagPopup p{
+    line-height: 1.5em;
+    letter-spacing: 0;
+    font-size: 0.9em;
+}
+.flagPopup div{
+    position: absolute;
+    right: -10px;
+    bottom: -10px;
+    background-color: black;
+    color: white;
+    height: 25px;
+    width: 25px;
+    line-height: 25px;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 3px;
+    font-weight: bold;
+}
+
+
+/* 우측 리모컨 영역 */
+.rmcnWrapper{
+    display: inline-block;
+    position: absolute;
+    top: 200px;
+    right: 1px;
+    width: 180px;
+    height: fit-content;
+    padding-left: 20px;
+    overflow: hidden;
+    z-index: 5;
+}
+.rmcn{
+    font-size: 0.8em;
+    text-align: center;
+    width: 150px;
+    height: fit-content;
+    border-radius: 20px;
+    padding: 10px;
+}
+.rmcn .rmcnContentBox{ /* 상단 즐겨찾기 메뉴 */
+    background: rgb(255, 255, 255);
+    border-radius: 20px 20px 0 0;
+    height: 150px;
+    padding: 10px;
+    box-shadow: 0 0 3px #ccc;
+}
+.rmcn .rmcnContentBox>div a{
+    padding: 5px;
+}
+.rmcn>div{
+    height: 55px;
+    width: 150px;
+    line-height: 55px;
+}
+.rmcn a:first-child>div{ /*리모콘 첫번째 메뉴*/
+    margin-top: -5px;
+}
+.rmcn .rmcnCS{ /* 하단 고객센터 안내 */
+    height: 150px;
+    width: 150px;
+    padding: 10px;
+    line-height: 25px;
+    letter-spacing: 1px;
+    background-color: rgb(237, 249, 163);
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 0 3px #ccc;
+    cursor: default;
+}
+.rmcn .rmcnCS strong{
+    font-size: 1.3em;
+}
+.rmcn>div:last-child{ /* 접기 버튼 */
+    position: absolute;
+    left: -21px;
+    top: 155px;
+    background-color: #ccc;
+    color: whitesmoke;
+    height: 43px;
+    width: 25px;
+    line-height: 36px;
+    text-align: center;
+    border-radius: 5px 0 0 5px;
+    cursor: pointer;
+    padding: 3px;
+    font-weight: bold;
+    font-size: 3em;
+}

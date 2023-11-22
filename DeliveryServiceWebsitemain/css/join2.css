@@ -1,0 +1,201 @@
+@charset "utf-8";
+/* 회원가입 레이아웃 */
+.joinArea{
+    margin: 30px 0;
+    text-align: center;
+}
+
+
+/* 제목 및 단계 */
+.steps{
+    margin: 0 auto;
+}
+.steps h2{
+    margin-left: -650px;
+    font-size: 1.1em;
+    background-color: rgba(55, 212, 214,0.7);
+    letter-spacing: 3px;
+    height: 30px;
+    line-height: 30px;
+    color: whitesmoke;
+    font-weight: 500;
+}
+.steps div{ /* 단계별 버튼 */
+    width: 150px;
+    height: 45px;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    display: inline-block;
+    background: linear-gradient(to bottom, #fff,rgb(245, 245, 245));
+    border: 1px solid rgb(161, 161, 161);
+    border-radius: 25px;
+    line-height: 45px;
+}
+.steps div:nth-child(3){
+    background: rgba(55, 212, 214,0.3);
+    border: 2px solid rgba(55, 212, 212,0.3);
+}
+
+
+/* 2단계 (회원가입 폼) */
+.step2{
+    border: 1px dashed rgb(247,247,247);
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 0.9em;
+    margin: auto auto;
+    margin-bottom: -70px;
+    background: linear-gradient(to bottom, rgb(247, 247, 247), #fff, rgb(247, 247, 247));
+}
+#joinForm{ /* 폼 영역 */
+    text-align: justify;
+    padding: 50px 300px 80px 400px;
+    margin: 40px auto 0;
+}
+fieldset{
+    margin: auto auto;
+    width: fit-content;
+}
+.requireP{ /*필수 표시 안내*/
+    margin-left: 580px;
+    margin-top: -40px;
+    padding-bottom: 50px;
+}
+#joinForm p{  /* 입력폼 항목 */
+    margin-bottom: 20px;
+}
+#joinForm span{
+    cursor: default;
+}
+#joinForm span:nth-child(2){  /* 메일링 서비스, SNS 수신 여부 */
+    margin-left: 50px;
+}
+#joinForm p:nth-child(6) select{ /* 비밀번호 분실 질문 옵션 */
+    margin-left: 50px;
+}
+#joinForm p label:first-child{
+    display: inline-block;
+    width: 200px;
+    margin-right: 20px;
+    cursor: default;
+    position: relative;
+    text-align: justify;
+}
+#joinForm label:first-child::after{ /* 라벨 오른쪽 : 표시 */
+    content: ":";
+    position: absolute;
+    top: -2px;
+    right: -30px;
+    color:rgb(105, 209, 212);
+    font-weight: bold;
+}
+#joinForm input[type=radio]+label::after{
+    content: none;
+}
+#joinForm input{
+    height: 2em;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    text-align: justify;
+    text-indent: 5px;
+    margin-left: 50px;
+}
+#joinForm input::placeholder{
+    font-size: 0.9em;
+    line-height: 1.5em;
+}
+#joinForm input[type=radio]{ /* 라디오 버튼 */
+    width: 10px;
+    margin-right: 3px;
+    position: relative;
+    top: 5px;
+}
+.step2 .require{ /* 필수 표시 */
+    display: inline-block;
+    font-size: 0.9em;
+    color:rgb(105, 209, 212);
+    margin-left: -5px;
+    margin-right: 5px;
+}
+.step2 #name{ /* 이름 입력칸 */
+    width: 100px;
+}
+.step2 #siteIf{ /* 기타 입력 선택 시 input 칸 표시 */
+    display: none;
+    height: 2em;
+    width: 150px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    text-align: justify;
+    text-indent: 10px;    
+    margin: 0 0;
+}
+.step2 #tel1{ /* 전화번호 1 인풋 */
+    margin-right: 11px;
+}
+.step2 #tel2, .step2 #tel3{ /* 전화번호 2,3 인풋 */
+    margin: 0 10px;
+    position: relative;
+    left: -5px;
+}
+.step2 #deliver{  /* 주소 입력칸 */
+    margin-top: 10px;
+    width: 300px;
+    margin-left: 277px;
+}
+.step2 input[type=radio]{
+    display: none;
+}
+.step2 input[type=radio]:checked+label{
+    background-color: rgb(105, 209, 212);
+    color: whitesmoke;
+}
+.step2 .labels{ /* 라디오버튼 라벨들 */
+    padding: 6px 12px;
+    margin-left: 50px;
+    border-radius: 20px;
+    background-color: rgb(202, 237, 236);
+    color: black;
+    cursor: pointer;
+}
+.step2 .labels:nth-of-type(2n-1){
+    margin-left: 15px;
+}
+.step2 #ma{ /* 남성 라디오버튼 */
+    margin-left: 15px;
+}
+.step2 .findZipcode, .step2 .idCheck{ /* 버튼 */
+    padding: 6px 10px;
+    margin-left: 10px;
+    border-radius: 15px;
+    background-color:rgb(215, 215, 215);
+    font-size: 0.9em;
+    width: 100px;
+}
+.step2 .findZipcode, .step2 .idCheck{
+    cursor: pointer;
+}
+.step2 .findZipcode, .step2 .idCheck{
+    color: rgb(63, 63, 63);
+    font-size: 0.9em;
+}
+.step2 p button a:visited{
+    color: rgb(63, 63, 63);
+}
+.step2 .buttons button{ /*회원가입, 취소 버튼*/
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    background-color: black;
+    color: white;
+    border-radius: 3px;
+    margin-top: 50px;
+    cursor: pointer;
+}
+#joinForm .buttons button:nth-child(1){ /*회원가입 버튼*/
+    margin-left: 210px;
+}
+#joinForm .buttons button:nth-child(2){ /*취소 버튼*/
+    margin-left: 50px;
+}

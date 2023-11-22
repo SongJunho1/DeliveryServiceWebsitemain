@@ -1,0 +1,271 @@
+@charset "utf-8";
+/* 초기화 */
+html,body,div,header,nav,section,aside,article,footer,figure,
+figcaption,legend,ul,ol,li,dl,dt,dd,h1,h2,h3,p{ /* *보다 속도 빠르게 */
+    margin: 0;
+    padding: 0;
+}
+ul{
+    list-style: none;
+}
+fieldset{
+    border: 0;
+}
+
+
+/* 숨김 */
+.hidden, legend, caption{
+    position: absolute;
+    left: -9999px; /*화면 밖으로 보냄*/
+}
+
+
+/* 폰트 */
+@font-face {
+    font-family: 'PrentendardThin';
+    src: url('font/Pretendard-1.3.3/web/static/woff/Pretendard-Thin.woff') format("woff"), 
+    url("font/Pretendard-1.3.3/public/static/Pretendard-Thin.otf") format("woff");
+}
+@font-face {
+    font-family: 'Prentendard';
+    src: url('font/Pretendard-1.3.3/web/static/woff/Pretendard-Medium.woff') format("woff"), 
+    url("font/Pretendard-1.3.3/public/static/Pretendard-Medium.otf") format("woff");
+}
+
+
+/* 링크 스타일 */
+a{
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+    z-index: 3;
+}
+a:visited{
+    color: black;
+}
+
+
+/* 전체 레이아웃 */
+#wrapper {
+    font-family: "PretendardThin";
+    color: rgb(40, 40, 40);
+    line-height: 1.2;
+    width: 100%;
+    height: 100%;
+    min-width: 1500px;
+    position: relative;
+    letter-spacing: 2px;
+}
+header, .main, .intAddr, .rmcn, footer{
+    width: 100%;
+    position: relative;
+}
+
+
+/* 헤더 영역 */
+header::before{
+    content: '';
+    background: rgba(177, 177, 177, 0.2);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+}
+header{
+    height: 150px;
+}
+header .linkMenu{ /* 링크 메뉴 */
+    position: absolute;
+    top: 0;
+    right: 0;
+    line-height: 30px;
+    font-size: 0.8em;
+    color: rgb(44, 44, 44);
+    letter-spacing: 2px;
+}
+header .linkMenu li{
+    float: right;
+    line-height: 30px;
+    margin-right: 5px;
+}
+header .linkMenu li a{
+    padding: 7px 20px;
+    cursor: pointer;
+}
+header .linkMenu li a:hover{
+    color:rgb(119, 119, 119);
+}
+
+header .menus{ /* 로고, 메인메뉴, 공지사항 */
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+}
+header .logo{ /* 로고 영역 */
+    font-size: 2.5em;
+    color: black;
+    letter-spacing:2px;
+    line-height: 70px;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 50px;
+    font-family: "Pretendard";
+}
+header .logo span{ /* 영문 로고 */
+    color: rgb(55, 212, 214);
+}
+header .logo a:hover{
+    color: black;
+}
+.mainMenu{ /* 메인 메뉴 */
+    width: fit-content;
+    margin-top: 57px;
+    display: flex;
+}
+header .mainMenu>li{ /* 상위 메뉴 */
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+}
+header .mainMenu>li>a{
+    font-weight: bold;
+    font-size: 1.2em;
+    border: 2px solid white;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    padding: 20px 32px 46px;
+    white-space: nowrap;
+    transition: all 0.2s linear;
+}
+header .mainMenu li ul{ /* 하위 메뉴 */
+    margin-top: 26px;
+    z-index: 10;
+    text-align: center;
+    width: 162px;
+    height: 0px;
+    overflow: hidden;
+}
+header .mainMenu ul li{
+    padding: 15px 0;
+}
+header .mainMenu ul li:hover a{
+    color: rgb(119, 119, 119);
+}
+header .mainMenu ul a {
+    font-size: 0.9em;
+    font-weight: 500;
+    padding: 10px 20px;
+}
+header .mainMenu li:first-child li:nth-child(4) a{
+    font-size: 0.85em;
+}
+.menuBack{  /* 하위메뉴 배경 */
+    width: 100%; 
+    height: 0px;
+    position: absolute;
+    top: 150px;
+    background-color: rgba(250, 250, 250,0.95);
+    z-index: 4;
+}
+/* 메뉴 호버시 설정 */
+.menuBack, .mainMenu li ul{
+    transition: all 0.3s linear;
+}    
+
+header .notice{ /* 공지사항 영역 */
+    border: 1px solid rgb(55, 212, 214);
+    border-radius: 20px;
+    width: 450px;
+    height: 40px;
+    margin-top: 104px;
+    overflow: hidden;
+}
+header .notice h2{ /* 공지사항 제목 */
+    font-size: 0.8em;
+}
+header .notice>a{ /* 공지사항 제목 */
+    line-height: 40px;
+    margin-left: 20px;
+    position: inherit;
+    z-index: 5;
+    display: inline-block;
+    width: fit-content;
+    height: fit-content;
+    padding: 0 10px;
+}
+header .notice ul{ /* 공지사항 내용 영역 */
+    position: relative;
+}
+header .notice li a{ /* 공지사항 내용 */
+    position: relative;
+    top: -2px;
+    left: 110px;
+    font-size: 0.9em;
+    margin-bottom: 1px;
+    line-height: 42px;
+    color: rgb(87, 87, 87);
+    display: inline-block;
+    width: 300px;
+    height: 40px;
+    cursor: pointer;
+}
+header .notice li:first-child{
+    margin-top: -40px;
+}
+header .notice li img{
+    width: 20px;
+    margin-right: 5px;
+    margin-bottom: -4px;
+}
+
+
+/* 푸터 영역 */
+footer{
+    display: flex;
+    flex:1;
+    justify-content: space-around;
+    color: rgb(75, 75, 75);
+    height: 200px;
+    box-sizing: border-box;
+    background: rgb(243, 243, 243);
+    letter-spacing: 2px;
+    font-size: 0.8em;
+    margin: 0;
+}
+.footerL{ /* 좌측 푸터 영역 */
+    display: flex;
+    width: 50%;
+    justify-content: space-around;
+}
+.footerL #aboutCS{ /* 고객 센터 */
+    padding: 20px;
+    text-align: center;
+    width: 200px;
+    margin: auto 0;
+}
+.footerL #aboutBank{ /* 은행 계좌 */
+    padding: 20px;
+    text-align: center;
+    width: 200px;
+    margin: auto 0;
+}
+footer h3{
+    margin-bottom: 20px;
+}
+.footerR{ /* 우측 푸터 영역 */
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 10px;
+    text-align: center;
+    margin: auto 0;
+}
+.footerR address{ /* 주소 */
+    font-style: normal;
+    display: block;
+    margin-bottom: 30px;
+}
+.footerR #law{ /* 약관 */
+    display: block;
+}
